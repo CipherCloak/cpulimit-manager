@@ -1,0 +1,73 @@
+/*
+ * cpulimit-manager — theme-agnostic layout stylesheet.
+ *
+ * No hardcoded colors here.  All color references use Textual's standard
+ * CSS variables ($accent, $background, $surface, $warning, $success, …)
+ * so every built-in theme is applied automatically to all elements.
+ */
+
+/* ------------------------------------------------------------------ */
+/*  Main layout                                                         */
+/* ------------------------------------------------------------------ */
+
+#main-layout {
+    height: 1fr;
+}
+
+/* Left panel — ALL PROCESS */
+#all-process {
+    width: 60%;
+    height: 100%;
+    border: solid $accent;
+    border-title-color: $accent;
+    border-title-style: bold;
+    scrollbar-color: $accent;
+}
+
+/* Right column */
+#right-panel {
+    width: 40%;
+    height: 100%;
+    layout: vertical;
+}
+
+/* Top-right panel — LIMITED PROCESS */
+#limited-process {
+    height: 1fr;
+    border: solid $warning;
+    border-title-color: $warning;
+    border-title-style: bold;
+    scrollbar-color: $warning;
+}
+
+/* Bottom-right panel — CPU MONITOR */
+#cpu-monitor {
+    height: 12;
+    border: solid $success;
+    border-title-color: $success;
+    border-title-style: bold;
+    padding: 0 1;
+}
+
+/* ------------------------------------------------------------------ */
+/*  DataTable — let the active theme drive all colors                  */
+/* ------------------------------------------------------------------ */
+
+DataTable {
+    background: $background;
+}
+
+DataTable > .datatable--header {
+    background: $surface;
+    color: $accent;
+    text-style: bold;
+}
+
+DataTable > .datatable--cursor {
+    background: $boost;
+    color: $foreground;
+}
+
+DataTable > .datatable--hover {
+    background: $panel;
+}
